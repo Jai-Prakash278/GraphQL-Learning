@@ -1,0 +1,74 @@
+--------------------------------------------------
+
+query getAllUsers{
+  users{
+    id
+    firstName
+  }
+}
+
+===================================================
+
+query getAllQuotes {
+  quotes {
+    name
+    by
+  }
+}
+
+====================================================
+
+query getUserById {
+  user(id: "23133") {
+    firstName
+    lastName
+    email
+  }
+}
+
+********** OR *******************
+
+query getUserById($userId: ID!) {
+  user(id: $userId) {
+    firstName
+    lastName
+    email
+  }
+}
+
+variable +++++++++++++++++++
+
+{
+  "userId": "23131"
+}
+
+=======================================================
+
+query getQuoteByUser {
+  quotesByUser(by: "23131") {
+    quote
+  }
+}
+
+=====================================================
+**************Mutation***************
+mutation createUser($userNew: UserInput!){
+  User:userDummy(userNew: $userNew){
+    id
+    firstName
+    lastName
+    email
+  }
+}
+
+variable +++++++++++++++++++++++
+{
+  "userNew":{
+    "firstName": "Rohan",
+    "lastName": "Kumar",
+    "email": "rohan@gmail.com",
+    "password": "12345678"
+  }
+}
+
+========================================================
