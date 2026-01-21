@@ -29,14 +29,6 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                to="/signUp"
-                className="text-white hover:text-gray-200 transition-all duration-300 px-3 py-2 rounded-md text-sm font-medium transform hover:scale-110"
-              >
-                Sign Up
-              </Link>
-            </li>
-            <li>
-              <Link
                 to="/create"
                 className="bg-white text-purple-600 hover:bg-gray-100 transition-all duration-300 px-4 py-2 rounded-md text-sm font-medium transform hover:scale-110 hover:shadow-lg"
               >
