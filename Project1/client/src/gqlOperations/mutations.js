@@ -2,18 +2,15 @@ import { gql } from '@apollo/client';
 
 export const SIGNUP_USER = gql`
   mutation signupUser($userNew: UserInput!) {
-    userSignUp(userNew: $userNew) {
-      _id
+    user:userSignUp(userNew: $userNew) {
       firstName
-      lastName
-      email
     }
   }
 `;
 
 export const LOGIN_USER = gql`
   mutation loginUser($userSignIn: loginInput!) {
-    userLogin(userSignIn: $userSignIn) {
+    user:userLogin(userSignIn: $userSignIn) {
       token
     }
   }
@@ -21,6 +18,21 @@ export const LOGIN_USER = gql`
 
 export const CREATE_QUOTE = gql`
   mutation createQuote($quote: String!) {
-    createQuote(quote: $quote)
+    quote:createQuote(quote: $quote)
+  }
+`;
+
+export const UPDATE_QUOTE = gql`
+  mutation updateQuote($id: ID!, $quote: String!) {
+    updateQuote(id: $id, quote: $quote) {
+      _id
+      quote
+    }
+  }
+`;
+
+export const DELETE_QUOTE = gql`
+  mutation deleteQuote($id: ID!) {
+    deleteQuote(id: $id)
   }
 `;

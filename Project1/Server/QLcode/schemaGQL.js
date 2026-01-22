@@ -4,6 +4,7 @@ const typeDefs = `
     user(_id: ID!) : User
     quotes: [Quote]
     quotesByUser(by: ID!): [Quote]
+    myProfile: User
   }
 
   type User {
@@ -28,6 +29,8 @@ const typeDefs = `
     userSignUp(userNew: UserInput!) : User
     userLogin(userSignIn: loginInput!) : Token
     createQuote(quote:String!) : String
+    updateQuote(id: ID!, quote: String!): Quote
+    deleteQuote(id: ID!): String
   }
 
   input UserInput{

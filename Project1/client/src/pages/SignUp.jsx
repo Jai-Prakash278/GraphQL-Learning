@@ -89,8 +89,8 @@ const SignUp = () => {
           </button>
           <p className="text-center text-gray-600 text-sm mt-4">
             Already have an account?{" "}
-            <Link 
-              to={"/login"} 
+            <Link
+              to={"/login"}
               className="text-blue-600 font-semibold underline hover:text-blue-700 transition-colors duration-300"
             >
               Login
