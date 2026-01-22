@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import { Home, Login, SignUp, CreateQuote, Profile } from "./pages";
+import OtherUserProfile from "./pages/OtherUserProfile";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
+      },
+      {
+        path: "profile/:userId",
+        element: <OtherUserProfile />,
       },
     ],
   },

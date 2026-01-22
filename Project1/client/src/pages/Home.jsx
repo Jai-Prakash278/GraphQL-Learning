@@ -3,6 +3,7 @@ import { GET_ALL_QUOTES } from "../gqlOperations/queries";
 import { DELETE_QUOTE } from "../gqlOperations/mutations";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -70,8 +71,18 @@ const Home = () => {
               {/* LEFT: Quote content */}
               <div className="flex-1">
                 <h6 className="text-gray-800 text-lg mb-2">{quote.quote}</h6>
-                <p className="text-gray-600 italic text-sm">
-                  ~{quote.by.firstName}
+                <p className="flex items-center gap-2 text-sm italic text-gray-600">
+                  <span>~{quote.by.firstName}</span>
+
+                  <Link
+                    to={`/profile/${quote.by._id}`}
+                    className="flex items-center gap-1 text-blue-600 hover:underline transition"
+                  >
+                    <span role="img" aria-label="view-profile">
+                      👁️
+                    </span>
+                    <span>View Profile</span>
+                  </Link>
                 </p>
               </div>
 
